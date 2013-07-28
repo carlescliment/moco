@@ -24,4 +24,9 @@ class Application
 	}
 
 
+	public function getParameter($parameter_name)
+	{
+		return $this->container->getParameterBag()->get($parameter_name);
+	}
+
 }

@@ -20,7 +20,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * @test
 	 */
-	public function itAllowsAccessToTheContainer()
+	public function itAllowsAccessingToTheContainerServices()
 	{
 		// Arrange
 		// Expect
@@ -35,5 +35,25 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 		// Act
 		$this->app->get('foo_service');
 	}
+
+
+	/**
+	 * @test
+	 */
+	public function itAllowsAccessingToTheContainerParameters()
+	{
+		// Arrange
+		// Expect
+		$this->container->expects($this->at(0))
+			->method('getParameterBag')
+			->will($this->returnValue($this->container));
+		$this->container->expects($this->at(1))
+			->method('get')
+			->with('foo_parameter');
+
+		// Act
+		$this->app->getParameter('foo_parameter');
+	}
+
 
 }

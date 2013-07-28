@@ -7,6 +7,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
+use carlescliment\MoCo\DependencyInjection\CompilerPass;
+
 class ApplicationBuilder
 {
 
@@ -14,6 +16,7 @@ class ApplicationBuilder
 	{
 		$container = new ContainerBuilder;
 		$loader = new YamlFileLoader($container, new FileLocator($config_path));
-		$loader->load("services_$environment.yml");
+		$loader->load("config_$environment.yml");
 		return new Application($container);
 	}
+}
