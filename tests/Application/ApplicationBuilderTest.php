@@ -4,8 +4,8 @@ namespace tests\Application;
 
 require_once dirname(__FILE__) . '/../Controller/SampleController.php';
 
-use carlescliment\MoCo\Application\ApplicationBuilder,
-	carlescliment\MoCo\Application\Application;
+use carlescliment\moco\Application\ApplicationBuilder,
+	carlescliment\moco\Application\Application;
 use tests\Controller\SampleController;
 
 

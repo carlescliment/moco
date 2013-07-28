@@ -1,5 +1,5 @@
 {
-    "name": "carlescliment/MoCo",
+    "name": "carlescliment/moco",
     "description": "PHP Model-Controller microframework",
     "version": "0.0.1-dev",
     "type": "project",
@@ -21,7 +21,7 @@
         "symfony/finder": "2.3.*"
     },
     "autoload": {
-        "psr-0": { "carlescliment\\MoCo": "src/" }
+        "psr-0": { "carlescliment\\moco": "src/" }
     }
 }
 

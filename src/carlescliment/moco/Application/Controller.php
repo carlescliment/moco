@@ -1,6 +1,6 @@
 <?php
 
-namespace carlescliment\MoCo\Application;
+namespace carlescliment\moco\Application;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface,
 	Symfony\Component\DependencyInjection\ContainerInterface;

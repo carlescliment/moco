@@ -1,7 +1,7 @@
 <?php
 namespace tests\Application;
 
-use carlescliment\MoCo\Application\Application;
+use carlescliment\moco\Application\Application;
 
 
 class ApplicationTest extends \PHPUnit_Framework_TestCase

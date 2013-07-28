@@ -1,6 +1,6 @@
 <?php
 
-namespace carlescliment\MoCo\DependencyInjection\CompilerPass;
+namespace carlescliment\moco\DependencyInjection\CompilerPass;
 
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;

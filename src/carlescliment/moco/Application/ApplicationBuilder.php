@@ -1,13 +1,13 @@
 <?php
 
-namespace carlescliment\MoCo\Application;
+namespace carlescliment\moco\Application;
 
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-use carlescliment\MoCo\DependencyInjection\CompilerPass\ControllerCompilerPass;
+use carlescliment\moco\DependencyInjection\CompilerPass\ControllerCompilerPass;
 
 class ApplicationBuilder
 {
