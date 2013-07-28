@@ -14,4 +14,16 @@ abstract class Controller implements ContainerAwareInterface
     	$this->container = $container;
     }
 
+
+	public function getService($service_name)
+	{
+		return $this->container->get('service_container')->get($service_name);
+	}
+
+
+	public function getParameter($parameter_name)
+	{
+		return $this->container->getParameterBag()->get($parameter_name);
+	}
+
 } 

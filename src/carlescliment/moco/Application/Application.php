@@ -18,7 +18,7 @@ class Application
 	}
 
 
-	public function get($service_name)
+	public function getService($service_name)
 	{
 		return $this->container->get('service_container')->get($service_name);
 	}
