@@ -1,5 +1,5 @@
 <?php
-namespace carlescliment\MoCo\Tests\Application;
+namespace tests\Application;
 
 use carlescliment\MoCo\Application\Application;
 
@@ -54,6 +54,5 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 		// Act
 		$this->app->getParameter('foo_parameter');
 	}
-
 
 }
