@@ -1,0 +1,28 @@
+{
+    "name": "carlescliment/MoCo",
+    "description": "PHP Model-Controller microframework",
+    "version": "0.0.1-dev",
+    "type": "project",
+    "keywords": ["php", "framework"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Carles Climent Granell",
+            "email": "carlescliment@gmail.com",
+            "homepage": "http://www.carlescliment.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/dependency-injection": "v2.3.0",
+        "symfony/yaml": "v2.3.0",
+        "symfony/config": "v2.3.0",
+        "symfony/finder": "2.3.*"
+    },
+    "autoload": {
+        "psr-0": { "carlescliment\\MoCo": "src/" }
+    }
+}
+
+
