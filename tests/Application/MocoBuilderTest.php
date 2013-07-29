@@ -4,12 +4,12 @@ namespace tests\Application;
 
 require_once dirname(__FILE__) . '/../Controller/SampleController.php';
 
-use carlescliment\moco\Application\ApplicationBuilder,
-	carlescliment\moco\Application\Application;
+use carlescliment\moco\Application\MocoBuilder,
+	carlescliment\moco\Application\Moco;
 use tests\Controller\SampleController;
 
 
-class ApplicationBuilderTest extends \PHPUnit_Framework_TestCase
+class MocoBuilderTest extends \PHPUnit_Framework_TestCase
 {
 
 	/**
@@ -19,10 +19,10 @@ class ApplicationBuilderTest extends \PHPUnit_Framework_TestCase
 	{
 		// Arrange
 		// Act
-		$application = ApplicationBuilder::build(__DIR__ . '/../config', 'test');
+		$application = MocoBuilder::build(__DIR__ . '/../config', 'test');
 
 		// Assert
-		$this->assertTrue($application instanceof Application);
+		$this->assertTrue($application instanceof Moco);
 	}
 
 	/**
@@ -31,7 +31,7 @@ class ApplicationBuilderTest extends \PHPUnit_Framework_TestCase
 	public function itLoadsTheEnvironmentConfigurationFile()
 	{
 		// Arrange
-		$application = ApplicationBuilder::build(__DIR__ . '/../config', 'test');
+		$application = MocoBuilder::build(__DIR__ . '/../config', 'test');
 
 		// Act
 		$environment_loaded = $application->getParameter('environment');
@@ -46,10 +46,10 @@ class ApplicationBuilderTest extends \PHPUnit_Framework_TestCase
 	public function itLoadsTheController()
 	{
 		// Arrange
-		$application = ApplicationBuilder::build(__DIR__ . '/../config', 'test');
+		$application = MocoBuilder::build(__DIR__ . '/../config', 'test');
 
 		// Act
-		$controller = $application->get('sample_controller');
+		$controller = $application->getService('sample_controller');
 
 		// Assert
 		$this->assertTrue($controller instanceof SampleController);

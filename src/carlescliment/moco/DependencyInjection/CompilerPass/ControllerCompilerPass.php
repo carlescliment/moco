@@ -11,7 +11,6 @@ class ControllerCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-
         $taggedServices = $container->findTaggedServiceIds(
             'moco.controller'
         );

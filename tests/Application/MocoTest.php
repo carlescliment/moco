@@ -1,7 +1,7 @@
 <?php
 namespace tests\Application;
 
-use carlescliment\moco\Application\Application;
+use carlescliment\moco\Application\Moco;
 
 
 class ApplicationTest extends \PHPUnit_Framework_TestCase
@@ -14,7 +14,8 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		$this->container = $this->getMock('Symfony\Component\DependencyInjection\ContainerBuilder');
-		$this->app = new Application($this->container);
+		$this->app = new Moco;
+		$this->app->setContainer($this->container);
 	}
 
 	/**
@@ -33,7 +34,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 			->with('foo_service');
 
 		// Act
-		$this->app->get('foo_service');
+		$this->app->getService('foo_service');
 	}
 
 

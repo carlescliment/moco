@@ -2,16 +2,19 @@
 
 namespace carlescliment\moco\Application;
 
+
 use Symfony\Component\DependencyInjection\ContainerAwareInterface,
 	Symfony\Component\DependencyInjection\ContainerInterface;
 
-abstract class Controller implements ContainerAwareInterface
+class Moco implements MocoInterface, ContainerAwareInterface
 {
-	protected $container;
+
+	private $container;
 
     public function setContainer(ContainerInterface $container = null)
     {
     	$this->container = $container;
+    	return $this;
     }
 
 
@@ -26,4 +29,4 @@ abstract class Controller implements ContainerAwareInterface
 		return $this->container->getParameterBag()->get($parameter_name);
 	}
 
-} 
+}

@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 use carlescliment\moco\DependencyInjection\CompilerPass\ControllerCompilerPass;
 
-class ApplicationBuilder
+class MocoBuilder
 {
 
 	public static function build($config_path, $environment)
@@ -19,6 +19,7 @@ class ApplicationBuilder
 		$loader = new YamlFileLoader($container, new FileLocator($config_path));
 		$loader->load("config_$environment.yml");
 		$container->compile();
-		return new Application($container);
+		$moco = new Moco;
+		return $moco->setContainer($container);
 	}
 }

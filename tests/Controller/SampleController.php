@@ -2,9 +2,9 @@
 
 namespace tests\Controller;
 
-use carlescliment\moco\Application\Controller;
+use carlescliment\moco\Application\Moco;
 
-class SampleController extends Controller
+class SampleController extends Moco
 {
 
 
