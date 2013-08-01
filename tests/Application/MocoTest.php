@@ -24,11 +24,12 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 	public function itAllowsAccessingToTheContainerServices()
 	{
 		// Arrange
-		// Expect
 		$this->container->expects($this->at(0))
 			->method('get')
 			->with('service_container')
 			->will($this->returnValue($this->container));
+			
+		// Expect
 		$this->container->expects($this->at(1))
 			->method('get')
 			->with('foo_service');
@@ -44,16 +45,37 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
 	public function itAllowsAccessingToTheContainerParameters()
 	{
 		// Arrange
-		// Expect
 		$this->container->expects($this->at(0))
 			->method('getParameterBag')
 			->will($this->returnValue($this->container));
+
+		// Expect
 		$this->container->expects($this->at(1))
 			->method('get')
 			->with('foo_parameter');
 
 		// Act
 		$this->app->getParameter('foo_parameter');
+	}
+
+
+	/**
+	 * @test
+	 */
+	public function itAllowsSettingParameters()
+	{
+		// Arrange
+		$this->container->expects($this->at(0))
+			->method('getParameterBag')
+			->will($this->returnValue($this->container));
+
+		// Expect
+		$this->container->expects($this->at(1))
+			->method('set')
+			->with('foo_parameter', 50);
+
+		// Act
+		$this->app->setParameter('foo_parameter', 50);
 	}
 
 }
