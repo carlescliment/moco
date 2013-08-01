@@ -32,7 +32,8 @@ class Moco implements MocoInterface, ContainerAwareInterface
 
     public function setParameter($parameter_name, $value)
     {
-        return $this->container->getParameterBag()->set($parameter_name, $value);
+        $this->container->getParameterBag()->set($parameter_name, $value);
+        return $this;
     }
 
 }
