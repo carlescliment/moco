@@ -22,6 +22,11 @@
     },
     "autoload": {
         "psr-0": { "carlescliment\\moco": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "stable" : "dev-master"
+        }
     }
 }
 
