@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface,
 class Moco implements MocoInterface, ContainerAwareInterface
 {
 
-	private $container;
+	protected $container;
 
     public function setContainer(ContainerInterface $container = null)
     {

@@ -1,0 +1,8 @@
+parameters:
+    environment: "test"
+
+services:
+    sample_controller:
+        class: "moco\Tests\Controller\SampleController"
+        tags: 
+            -  { name: moco.controller }
