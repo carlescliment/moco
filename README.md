@@ -151,7 +151,7 @@ Hey, that's different. It is saying that we have not declared any service named 
 To make this guide faster, we will make many different steps now.
 
 
-# Building a public controller
+## Building a public controller
 
 First, let's organize or configuration file. Write a file in `src/Configuration/config.yml` with the following content:
 
@@ -187,3 +187,72 @@ Cool, that's easy to solve. C'mon, write your controller in `src/Controller/Gree
             return "Hello $name!";
         }
     }
+
+
+## Advanced controllers
+
+The controller we have written is enough for greet people, but normally you will need a bit more in your logic. In fact, you will probably need to access to other services from your controller. MoCo lets you access to the dependency injection container by writting advanced controllers.
+
+
+Change the declaration of the controller in `config.yml` and add a parameter:
+
+    parameters:
+        greet_clause: 'Hi'
+
+    greetings_controller:
+        class: Controller\GreetingsController
+        tags:
+            - { name: moco.controller }
+
+
+Now modify your controller class:
+
+    <?php
+
+    namespace Controller;
+
+    use carlescliment\moco\Application\Moco;
+
+    class GreetingsController extends Moco
+    {
+        public function greet($name)
+        {
+            $greet_clause = $this->getParameter('greet_clause');
+            return "$greet_clause $name!";
+        }
+    }
+
+
+If you run the test now, you will see them fail and show the following message:
+
+    1) Test\Controller\GreetingsControllerTest::itSaysHello
+    Failed asserting that two strings are equal.
+    --- Expected
+    +++ Actual
+    @@ @@
+    -'Hello Carles!'
+    +'Hi Carles!'
+
+That means your controller is now aware of the environment configuration!
+
+
+## Adding compilers and extensions
+
+As your application grows, you will probably need to install third-party libs and expose them in the container. Fortunately, you can do it easily by adding these compiler passes and extensions to the application before running it:
+
+        $app = MocoBuilder::build($dir, $env);
+        $app->addExtension(new MyExtension);
+        $app->addCompilerPass(new SwiftMailerCompilerPass);
+        $app->addCompilerPass(new DoctrineCompilerPass);
+        $app->addCompilerPass(new EventDispatcherCompilerPass);
+        $app->run();
+
+
+
+## Embedding MoCo in your own framework
+
+Once your bussiness logic is well-defined and coded, you can now require your application in your Symfony/Sylex/Drupal/CodeIgniter/whatever with composer. Just write the code needed to build the MocoApp and start using it the same way you do from tests.
+
+
+
+
