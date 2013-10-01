@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "v2.3.3"
+                "reference": "65a927c15ca5a911ba2fa277a5457fa8129505b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/65a927c15ca5a911ba2fa277a5457fa8129505b0",
+                "reference": "65a927c15ca5a911ba2fa277a5457fa8129505b0",
                 "shasum": ""
             },
             "require": {
@@ -60,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DependencyInjection.git",
-                "reference": "v2.3.3"
+                "reference": "3678aa969e5bfeb8515a1f3047c63e8104723f5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/3678aa969e5bfeb8515a1f3047c63e8104723f5c",
+                "reference": "3678aa969e5bfeb8515a1f3047c63e8104723f5c",
                 "shasum": ""
             },
             "require": {
@@ -111,17 +111,17 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.3.3",
+            "version": "v2.3.5",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "v2.3.3"
+                "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/2b8995042086c5552c94d33b5553c492e9cfc00e",
+                "reference": "2b8995042086c5552c94d33b5553c492e9cfc00e",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-21 12:12:18"
+            "time": "2013-09-19 09:45:20"
         },
         {
             "name": "symfony/finder",
@@ -163,12 +163,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "v2.3.3"
+                "reference": "b251476db261edb54bb1d7c6b8be6ae49ff9a371"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/b251476db261edb54bb1d7c6b8be6ae49ff9a371",
+                "reference": "b251476db261edb54bb1d7c6b8be6ae49ff9a371",
                 "shasum": ""
             },
             "require": {
@@ -210,12 +210,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "v2.3.3"
+                "reference": "3837ccd0830ef44ed5c5844403bf6f69f7998758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/3837ccd0830ef44ed5c5844403bf6f69f7998758",
+                "reference": "3837ccd0830ef44ed5c5844403bf6f69f7998758",
                 "shasum": ""
             },
             "require": {
