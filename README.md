@@ -113,7 +113,7 @@ Perfect, now let's write the test. Create a folder `tests/Controller` and write 
     }
 
 
-What the test is saying is that the application is able to say hello. Looking at the inner code we see that, first, we create an application instance, then execute the method `hello` of a 'greetings_controller' service and it should return a string greeting the person passed in the first argument.
+What the test is saying is that the application is able to say hello. Looking at the inner code we see that, first, we create an application instance, then execute the method `greet` of a 'greetings_controller' service and it should return a string greeting the person passed in the first argument.
 
 Execute the test file by running the `phpunit` command from the root folder.
 
