@@ -38,6 +38,7 @@ MoCo does not provide any standard to build your directory structure. Here is an
     
     class ApplicationBuilder
     {
+    
         public static function build($env = 'prod', $dir = null)
         {
             if (is_null($dir)) {
@@ -45,6 +46,7 @@ MoCo does not provide any standard to build your directory structure. Here is an
             }
             return MocoBuilder::build($dir, $env);
         }
+        
     }
 
 
