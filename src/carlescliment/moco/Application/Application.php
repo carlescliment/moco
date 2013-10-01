@@ -36,6 +36,7 @@ class Application extends Moco
         $this->addExtensionsToContainer();
         $this->container->compile();
         $this->running = true;
+        return $this;
     }
 
 

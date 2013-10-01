@@ -5,7 +5,7 @@ MoCo is a Model-Controller framework. Built on the Symfony Dependency Injection 
 
 Once your bussiness logic has been properly coded and tested, you can then include your application in an HTTP framework that will handle the requests and provide a front-end layer with the response in HTML, JSON or whatever you need.
 
-# Installation
+## Installation
 
 Create a directory that will contain your PHP application. Write a `composer.json` file in it. At first it will be something like this:
 
@@ -22,7 +22,7 @@ Create a directory that will contain your PHP application. Write a `composer.jso
 
 Execute `php composer.phar update`. MoCo will be installed as a vendor.
 
-# Building your app on MoCo
+## Building your app on MoCo
 
 MoCo does not provide any standard to build your directory structure. Here is an example:
 
@@ -51,7 +51,7 @@ MoCo does not provide any standard to build your directory structure. Here is an
 As you can see, MocoBuilder accepts two parameters, `$dir` and `$env`. `$dir` is the directory where the configuration files are. `$env` is the environment that will be used. We will talk about it later.
 
 
-# Your first controller.
+## Testing your first controller
 
 Lets start from the beginning. In order to make tests run properly we need a few configuration files. First, create a phpunit.xml file in your root folder:
 
@@ -113,6 +113,8 @@ Perfect, now let's write the test. Create a folder `tests/Controller` and write 
     }
 
 
+What the test is saying is that the application is able to say hello. Looking at the inner code we see that, first, we create an application instance, then execute the method `hello` of a 'greetings_controller' service and it should return a string greeting the person passed in the first argument.
+
 Execute the test file by running the `phpunit` command from the root folder.
 
     E
@@ -126,3 +128,10 @@ Execute the test file by running the `phpunit` command from the root folder.
 
 
 The test fails. It says it is looking for a file `config_test.yml` in `/var/www/vhosts/moco-app/src/Configuration` and it does not exist, right? Let's talk about environments.
+
+
+## Environments
+
+MoCo can run in many different environments. The most used environments are 'test', 'dev' and 'prod', although you could create an environment with the name you wish. Environments allow you to provide different configurations and behavours. It is very useful for testing, but also when you share the same codebase among different clients.
+
+Let's satisfy what the test is asking for by writting an empty file `src/Configuration/config_test.yml`.
