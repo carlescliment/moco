@@ -31,7 +31,7 @@ MoCo does not provide any standard to build your directory structure. Here is an
 * Create a new class `ApplicationBuilder` in `src/Configuration/ApplicationBuilder.php`.
 
     <?php
-
+    
     namespace Configuration;
     
     use carlescliment\moco\Application\ApplicationBuilder as MocoBuilder;
