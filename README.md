@@ -33,9 +33,9 @@ MoCo does not provide any standard to build your directory structure. Here is an
     <?php
 
     namespace Configuration;
-
+    
     use carlescliment\moco\Application\ApplicationBuilder as MocoBuilder;
-
+    
     class ApplicationBuilder
     {
         public static function build($env = 'prod', $dir = null)
