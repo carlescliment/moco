@@ -30,22 +30,24 @@ MoCo does not provide any standard to build your directory structure. Here is an
 
 * Create a new class `ApplicationBuilder` in `src/Configuration/ApplicationBuilder.php`.
 
-    <?php
-
-    namespace Configuration;
-    
-    use carlescliment\moco\Application\ApplicationBuilder as MocoBuilder;
-    
-    class ApplicationBuilder
-    {
-        public static function build($env = 'prod', $dir = null)
+        <?php
+        
+        namespace Configuration;
+        
+        use carlescliment\moco\Application\ApplicationBuilder as MocoBuilder;
+        
+        class ApplicationBuilder
         {
-            if (is_null($dir)) {
-                $dir = __DIR__;
+        
+            public static function build($env = 'prod', $dir = null)
+            {
+                if (is_null($dir)) {
+                    $dir = __DIR__;
+                }
+                return MocoBuilder::build($dir, $env);
             }
-            return MocoBuilder::build($dir, $env);
+            
         }
-    }
 
 
 As you can see, MocoBuilder accepts two parameters, `$dir` and `$env`. `$dir` is the directory where the configuration files are. `$env` is the environment that will be used. We will talk about it later.
