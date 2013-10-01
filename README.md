@@ -81,7 +81,7 @@ Lets start from the beginning. In order to make tests run properly we need a few
     </phpunit>
 
 
-Then, create the bootstrap file to autoload the source code:
+Then, create the `tests/bootstrap.php` file to autoload the source code:
 
     <?php
 
