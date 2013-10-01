@@ -134,7 +134,7 @@ The test fails. It says it is looking for a file `config_test.yml` in `/var/www/
 
 MoCo can run in many different environments. The most used environments are 'test', 'dev' and 'prod', although you could create an environment with the name you wish. Environments allow you to provide different configurations and behavours. It is very useful for testing, but also when you share the same codebase among different clients.
 
-Let's satisfy what the test is asking for by writting an empty file `src/Configuration/config_test.yml`. Run the test again:
+Let's satisfy what the test is asking for by writing an empty file `src/Configuration/config_test.yml`. Run the test again:
 
 
     E
@@ -191,7 +191,7 @@ Cool, that's easy to solve. C'mon, write your controller in `src/Controller/Gree
 
 ## Advanced controllers
 
-The controller we have written is enough for greeting people, but normally you will need a bit more in your logic. In fact, you will probably need to access to other services from your controller. MoCo lets you access to the dependency injection container by writting advanced controllers.
+The controller we have written is enough for greeting people, but normally you will need a bit more in your logic. In fact, you will probably need to access to other services from your controller. MoCo lets you access to the dependency injection container by writing advanced controllers.
 
 
 Change the declaration of the controller in `config.yml` and add a parameter:
