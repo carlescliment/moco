@@ -238,7 +238,7 @@ That means your controller is now aware of the environment configuration!
 
 ## Adding compilers and extensions
 
-As your application grows, you will probably need to install third-party libs and expose them in the container. Fortunately, you can do it easily by adding these compiler passes and extensions to the application before running it:
+As your application grows, you will probably need to install third-party libs and expose them in the container. Fortunately, you can do it easily by adding compiler passes and extensions to the application before running it:
 
         $app = MocoBuilder::build($dir, $env);
         $app->addExtension(new MyExtension);
