@@ -3,7 +3,7 @@ MoCo
 
 MoCo is a Model-Controller framework. Built on the Symfony Dependency Injection component, it lets you building HTTP-agnostic applications and focus in the bussiness logic your system needs. The goal is to obtain the better possible design by removing the annoyances of web-oriented frameworks. It is also not intendended to generate views, albeit you could do it.
 
-Once your bussiness logic has been properly coded and tested, you can then include your application in an HTTP framework that will handle the requests and provide a front-end layer with the response in HTML, JSON or whatever you need.
+Once your bussiness logic has been properly coded and tested, you can then include your application in an HTTP framework that will handle the requests and provide responses in HTML, JSON or whatever you need.
 
 ## Installation
 
