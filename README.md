@@ -13,7 +13,7 @@ Create a directory that will contain your PHP application. Write a `composer.jso
         "name": "my/moco-app",
         "require": {
             "php": ">=5.3.2",
-            "carlescliment/moco": "*"
+            "carlescliment/moco": "dev-master"
         },
         "autoload": {
             "psr-0": { "": "src/" }
@@ -102,11 +102,11 @@ Perfect, now let's write the test. Create a folder `tests/Controller` and write 
         /**
          * @test
          */
-        public function itSaysHello()
+        public function itGreetsPeople()
         {
             $app = ApplicationBuilder::build('test')->run();
 
-            $response = $app->getService('greetings_controller')->hello('Carles');
+            $response = $app->getService('greetings_controller')->greet('Carles');
 
             $this->assertEquals('Hello Carles!', $response);
         }
@@ -123,7 +123,7 @@ Execute the test file by running the `phpunit` command from the root folder.
 
     There was 1 error:
 
-    1) Test\Controller\GreetingsControllerTest::itSaysHello
+    1) Test\Controller\GreetingsControllerTest::itGreetsPeople
     InvalidArgumentException: The file "config_test.yml" does not exist (in: /var/www/vhosts/moco-app/src/Configuration).
 
 
@@ -134,4 +134,56 @@ The test fails. It says it is looking for a file `config_test.yml` in `/var/www/
 
 MoCo can run in many different environments. The most used environments are 'test', 'dev' and 'prod', although you could create an environment with the name you wish. Environments allow you to provide different configurations and behavours. It is very useful for testing, but also when you share the same codebase among different clients.
 
-Let's satisfy what the test is asking for by writting an empty file `src/Configuration/config_test.yml`.
+Let's satisfy what the test is asking for by writting an empty file `src/Configuration/config_test.yml`. Run the test again:
+
+
+    E
+
+    Time: 0 seconds, Memory: 4.00Mb
+
+    There was 1 error:
+
+    1) Test\Controller\GreetingsControllerTest::itGreetsPeople
+    Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: The service definition "greetings_controller" does not exist.
+
+Hey, that's different. It is saying that we have not declared any service named "greetings_controller" in the container. MoCo has been designed to be consumed by other apps, so controllers have to be declared as services to be public.
+
+To make this guide faster, we will make many different steps now.
+
+
+# Building a public controller
+
+First, let's organize or configuration file. Write a file in `src/Configuration/config.yml` with the following content:
+
+    parameters:
+        # declare your parameters here
+
+    services:
+
+        greetings_controller:
+            class: Controller\GreetingsController
+
+
+Modify the contents of `src/Configuration/config_test.yml`:
+
+    imports:
+        - { resource: "config.yml" }
+
+
+If you execute the tests now you will see the following message:
+
+    ReflectionException: Class Controller\GreetingsController does not exist
+
+Cool, that's easy to solve. C'mon, write your controller in `src/Controller/GreetingsController.php`:
+
+    <?php
+
+    namespace Controller;
+
+    class GreetingsController
+    {
+        public function greet($name)
+        {
+            return "Hello $name!";
+        }
+    }
