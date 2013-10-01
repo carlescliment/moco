@@ -191,7 +191,7 @@ Cool, that's easy to solve. C'mon, write your controller in `src/Controller/Gree
 
 ## Advanced controllers
 
-The controller we have written is enough for greet people, but normally you will need a bit more in your logic. In fact, you will probably need to access to other services from your controller. MoCo lets you access to the dependency injection container by writting advanced controllers.
+The controller we have written is enough for greeting people, but normally you will need a bit more in your logic. In fact, you will probably need to access to other services from your controller. MoCo lets you access to the dependency injection container by writting advanced controllers.
 
 
 Change the declaration of the controller in `config.yml` and add a parameter:
